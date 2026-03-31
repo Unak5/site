@@ -1,0 +1,303 @@
+
+// sessionStorage.clear();
+
+window.onload = function() {
+	if (document.body.classList.contains('w-prl')) {
+		sessionStorage.setItem('load', true)
+		preloader();
+	} else {
+		new WOW().init();
+		onLoad();
+		onLoadAfter();
+	}
+}
+
+
+function preloader() {
+	document.body.classList.add('noscroll')
+
+	setTimeout(function() {
+		new WOW().init();
+		onLoad();
+		setTimeout(onLoadAfter, 1000);
+
+	}, 4000)
+}
+
+function onLoad() {
+	document.body.classList.add('loading');
+
+	[].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+		img.removeAttribute('src');
+		img.setAttribute('src', img.getAttribute('data-src'));
+		img.onload = function() {img.removeAttribute('data-src');};
+	});	
+}
+
+function onLoadAfter() {
+	document.body.classList.remove('noscroll')
+	document.body.classList.add('loaded');
+
+
+	// widget
+	$('.highweb-widget__icon').click(function() {
+		$('.highweb-widget').toggleClass('active');
+	})
+
+	$(document).on('click touchend', function (e){
+		if ($('.highweb-widget').hasClass('active')) {
+			let div = $('.highweb-widget');
+			if (!div.is(e.target) && div.has(e.target).length === 0) {
+				$('.highweb-widget').removeClass('active');
+			}
+		}
+	});
+
+
+	// menu
+	$('.header-contact__burger, .header-menu__close').click(function() {
+		$('.header-menu').toggleClass('active')
+		$('body, html').toggleClass('noscroll')
+	})
+
+	// callback
+	$('.callback-btn').click(function(){
+		$('.mobile-bg, .highweb-widget').removeClass('active')
+		$('.header-menu').removeClass('active')
+		$('body, html').removeClass('noscroll')
+
+		$('#callback .callback-head').html($(this).data('title'))
+		$('#callback input[name="title"]').val($(this).data('title'))
+		$('.callback').fadeIn(200)
+		$('body, html').addClass('menu-active')
+
+		return false;
+	})
+	$('.callback__close').click(function(){
+		$('.callback').fadeOut(300)
+		$('body, html').removeClass('menu-active')
+
+		if ($(window).width() > 992) {
+			$('.language-block').fadeToggle(200)
+		}
+	})
+
+    let input = document.querySelector("#contact-phone");
+	    input.addEventListener("input", mask, false);
+	    input.addEventListener("focus", mask, false);
+	    input.addEventListener("blur", mask, false);
+
+    $('#callback .callback-button').click(function(){
+		let countError = 0;
+
+		if ($('#contact-name').val().length < 3) {
+			$('#contact-name').addClass('error')
+			countError++;
+		} else {
+			$('#contact-name').removeClass('error')
+		}
+
+    	if ($('#contact-phone').val().length < 18) {
+    		$('#contact-phone').addClass('error')
+    		countError++;
+    	} else {
+    		$('#contact-phone').removeClass('error')
+    	}
+
+    	if (!countError) {
+    		$.ajax({
+				url: $('#callback input[name="url"]').val(),
+				type: 'post',
+				data: $('#callback input'),
+				success: function() {
+					$('#callback').fadeOut(200)
+					$('.callback__success').fadeIn(300)
+					$('#contact-name, #contact-phone').val('')
+
+					setTimeout(function(){
+						$('.callback').fadeOut(300)
+						$('body, html').removeClass('menu-active')
+						$('#callback').fadeIn(200)
+						$('.callback__success').fadeOut(300)
+					}, 2000)
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				}
+           });
+    	}
+    })
+
+
+    // stepper
+    document.querySelectorAll('textarea').forEach(el => {
+        el.style.height = el.setAttribute('style', 'height: ' + el.scrollHeight + 'px');
+        el.classList.add('auto');
+        el.addEventListener('input', e => {
+            el.style.height = 'auto';
+            el.style.height = (el.scrollHeight) + 'px';
+        });
+    });
+
+    let stepPhone = $('input[name="commun_phone"]');
+	    stepPhone.on("input", mask);
+	    stepPhone.on("focus", mask);
+	    stepPhone.on("blur", mask);
+
+
+    let stepper = $('[data-stepper="brief"]');
+	if (stepper.length) {
+		stepper.find('[data-to-step]').click(function(e){
+            e.preventDefault();
+
+            let step = $(this).data('to-step');
+            
+            if (step == 'send') {
+            	let data = {};
+            	$('.stepper-list input, .stepper-list textarea').each(function(){
+            		if ($(this).val().length && $(this).attr('type') != 'checkbox' && $(this).attr('type') != 'hidden') {
+            			let name = $(this).attr('placeholder')
+            				value = $(this).val();
+
+            			data[name] = value;
+            		} else {
+            			if ($(this).is(':checked')) {
+            				let name = $(this).attr('placeholder')
+            					value = $(this).val();
+
+            				data[name] = value;
+            			}
+            		}
+            	})
+
+            	json = JSON.stringify(data)
+            	$('.stepper-list input[name="data"]').val(json);
+
+	    		$.ajax({
+					url: $('.stepper-list input[name="url"]').val(),
+					type: 'post',
+					data: $('.stepper-list input[name="action"], .stepper-list input[name="data"]'),
+					success: function() {
+						$('.stepper-steps').fadeOut(0)
+						if (stepper.find('.stepper-one').hasClass('fadeIn') == false) {
+							stepper.find('.stepper-one').addClass('fadeIn');
+						}
+						stepper.find('.stepper-one').removeClass('active');
+						stepper.find('[data-step="5"]').addClass('active');  
+					},
+					error: function(xhr, ajaxOptions, thrownError) {
+						console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+					}
+	           });
+
+                
+            } else {
+            	if (step == 2 && !$(this).next().data('to-step')) {
+            		let name = $(this).parent().prev().find('input[name="commun_name"]');
+            			phone = $(this).parent().prev().find('input[name="commun_phone"]');
+            			email = $(this).parent().prev().find('input[name="commun_email"]');
+            			countError = 0;
+
+            		if (name.val().length < 3) {
+            			name.addClass('error')
+            			countError++
+            		} else {
+            			name.removeClass('error')
+            		}
+            		if (phone.val().length < 18) {
+            			phone.addClass('error')
+            			countError++
+            		} else {
+            			phone.removeClass('error')
+            		}
+            		if (!email.val().length || !validateEmail(email.val())) {
+            			email.addClass('error')
+            			countError++
+            		} else {
+            			email.removeClass('error')
+            		}
+
+            		if (countError) {
+            			return false;
+            		}
+
+            	}
+
+            	$('html, body').animate({
+            		scrollTop: $('.stepper-list').offset().top - 100
+            	}, 500);
+            	
+				if (stepper.find('.stepper-one').hasClass('fadeIn') == false) {
+					stepper.find('.stepper-one').addClass('fadeIn');
+				}
+                stepper.find('.stepper-one').removeClass('active');
+                stepper.find('[data-step="' + step + '"]').addClass('active');   
+
+				$('.step-num').text(step)
+                $('.step-scale').attr('data-step', step)
+            }
+        });
+	}
+
+	// request list
+	$('.stepper__input-list input').on('input', inputText)
+
+	listCount = 0;
+	$('.stepper__input-list .add-button').click(function(){
+		if ($(this).hasClass('active')) {
+			listCount++;
+			let item = '';
+			item += '<div class="stepper__input-list-item">';
+				item += '<input name="' + $(this).data('block') + '_' + listCount +'" placeholder="' + $(this).data('name') + '_' + listCount +'" type="text" value="' + $(this).prev().val() + '" readonly>';
+				item += '<div class="add-button">';
+					item += '<svg class="remove" viewBox="0 0 352 512"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>';
+				item += '</div>';
+			item += '</div>';
+
+			$(this).prev().val('')
+			$('.' + $(this).data('block') + '-list').append(item)
+			$('.' + $(this).data('block') + '-list .add-button').on('click', removeItem)
+		}
+		$(this).removeClass('active')
+	})
+}
+
+function setCursorPosition(pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+    else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select()
+    }
+}
+
+function mask(event) {
+    var matrix = "+38(___) ___ __ __",
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = this.value.replace(/\D/g, "");
+    if (def.length >= val.length) val = def;
+    this.value = matrix.replace(/./g, function(a) {
+        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+    });
+    if (event.type == "blur") {
+        if (this.value.length == 2) this.value = ""
+    } else setCursorPosition(this.value.length, this)
+};
+
+function validateEmail(email) {
+	let re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+function inputText(event) {
+	let input = $(this);
+	(input.val()) ? input.next().addClass('active') : input.next().removeClass('active');
+};
+
+function removeItem(event) {
+	$(this).parent().remove()
+};

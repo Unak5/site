@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) no-repeat;
+            background-size: cover;
+        }
+        
+        .vl {
+            border-left: 6px solid green;
+            padding: auto;
+        }
+        
+        .vrr {
+            border-right: 6px solid green;
+            padding: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <b><h1 class="text-center mt-5 mb-5" style="font-size: 60px;">Контекстна реклама
+
+
+        </h1></b>
+        <p class="text-center" style="font-size: 25px;">Створення та налаштування рекламної кампанії в Google Ads
+
+
+
+
+        </p>
+        <p class="text-center  mb-5" style="font-size: 25px;"></p>
+        <a href="#cost" class="btn btn_itd1 btn-lg mb-5 text-uppercase" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <h4>Замовити сайт</h4>
+        </a>
+        <div class="row text-start">
+            <div class="col-6">
+                <h2 class="color6 mb-5">ЩО ВИ ОТРИМАЄТЕ</h2>
+                <div class="vl">
+                    <p>- Унікальний адаптивний дизайн</p>
+                    <p>- Панель управління сайтом</p>
+                    <p>- Багатомовність</p>
+                    <p>- Анімація елементів сайту</p>
+                    <p>- Навігаційне меню</p>
+                    <p>- Управління новинами, статтями</p>
+                </div>
+                <a id="nextt" href="/index.html"><span class="arrow">&#10230;</span></a>
+            </div>
+            <div class="col-6 text-end ">
+                <h2 class=" mb-5 color6">Контекстна реклама
+
+                </h2>
+                <h3 class="color4" style=" font-size: 26px; margin-right: 20px;">ціна від</h3>
+                <p class="co12" style=" font-size: 45px; margin-right: 20px;"> 15 000 ₴</p>
+                <h2 class="mb-5 " style="font-size: 18px; margin-right: 20px;">
+
+
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Замовити</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+ <div class="modal-body">
+
+    <form class="row g-3">
+        <div class="col-md-3">
+          <label for="validationDefault01" class="form-label">Ім'я</label>
+          <input type="text" placeholder="Іван" class="form-control" required autocomplete="off" id="validationDefault01" >
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault02" class="form-label">Фамілія</label>
+          <input type="text" class="form-control" required autocomplete="off" id="validationDefault02" placeholder="Репін" required>
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefaultUsername" class="form-label">Почта</label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+            <input type="text" class="form-control" id="validationDefaultUsername" placeholder="user@gmail.com" required autocomplete="off"  aria-describedby="inputGroupPrepend2" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationDefault03" class="form-label">Номер телефона</label>
+            <input type="tel" name="tel" 
+            pattern="+380[0-9]{3}-[0-9]{3}" value="" required autocomplete="off"
+
+            maxlength="13" inputmode="numeric" class="form-control" id="validationDefault03"  placeholder="+380 (12) 345-67-89">
+          </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрить</button>
+              <button type="submit" class="btn btn-primary" >Підтвердить</button>
+            </div>
+
+            
+ </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="/js/bootstrap.bundle.min.js"></script>
+    
+        <script>
+            var TxtType = function(el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
+                this.isDeleting = false;
+            };
+    
+            TxtType.prototype.tick = function() {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
+    
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+    
+                this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+    
+                var that = this;
+                var delta = 200 - Math.random() * 100;
+    
+                if (this.isDeleting) {
+                    delta /= 2;
+                }
+    
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 1000;
+                }
+    
+                setTimeout(function() {
+                    that.tick();
+                }, delta);
+            };
+    
+            window.onload = function() {
+                var elements = document.getElementsByClassName('typewrite');
+                for (var i = 0; i < elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-type');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                        new TxtType(elements[i], JSON.parse(toRotate), period);
+                    }
+                }
+                // INJECT CSS
+                var css = document.createElement("style");
+                css.type = "text/css";
+                css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+                document.body.appendChild(css);
+            };
+        </script>
+
+
+</div>
+
+
+
+</body>
+
+</html>

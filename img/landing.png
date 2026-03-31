@@ -1,0 +1,38 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 226 226"><defs><linearGradient x1="171.26563" y1="89.63372" x2="171.26563" y2="111.98653" gradientUnits="userSpaceOnUse" id="color-1"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient><linearGradient x1="74.15625" y1="116.53125" x2="74.15625" y2="146.10547" gradientUnits="userSpaceOnUse" id="color-2"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient><linearGradient x1="88.28125" y1="0.82631" x2="88.28125" y2="191.48203" gradientUnits="userSpaceOnUse" id="color-3"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient><linearGradient x1="88.28125" y1="0.82631" x2="88.28125" y2="191.48203" gradientUnits="userSpaceOnUse" id="color-4"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient><linearGradient x1="81.21875" y1="0.82631" x2="81.21875" y2="191.48203" gradientUnits="userSpaceOnUse" id="color-5"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient><linearGradient x1="74.15625" y1="0.82631" x2="74.15625" y2="191.48203" gradientUnits="userSpaceOnUse" id="color-6"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient><linearGradient x1="113" y1="0.82631" x2="113" y2="191.48203" gradientUnits="userSpaceOnUse" id="color-7"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient><linearGradient x1="165.96875" y1="0.82631" x2="165.96875" y2="191.48203" gradientUnits="userSpaceOnUse" id="color-8"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#0fc6ff"></stop></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g><path d="M165.96875,91.8125v21.1875c5.85128,0 10.59375,-4.74247 10.59375,-10.59375c0,-5.85128 -4.74247,-10.59375 -10.59375,-10.59375z" fill="url(#color-1)"></path><path d="M91.8125,137.71875c0,1.94925 -1.582,3.53125 -3.53125,3.53125h-28.25c-1.94925,0 -3.53125,-1.582 -3.53125,-3.53125v-14.125c0,-1.94925 1.582,-3.53125 3.53125,-3.53125h28.25c1.94925,0 3.53125,1.582 3.53125,3.53125z" fill="url(#color-2)"></path><g><rect x="16" y="18" transform="scale(3.53125,3.53125)" width="18" height="2" fill="url(#color-3)"></rect><rect x="16" y="22" transform="scale(3.53125,3.53125)" width="18" height="2" fill="url(#color-4)"></rect><rect x="16" y="26" transform="scale(3.53125,3.53125)" width="14" height="2" fill="url(#color-5)"></rect><rect x="16" y="30" transform="scale(3.53125,3.53125)" width="10" height="2" fill="url(#color-6)"></rect><path d="M180.09375,66.26038v-33.92472c0,-2.87091 -1.70913,-5.44166 -4.35403,-6.53634c-2.62372,-1.09116 -5.62881,-0.50497 -7.65222,1.51138l-5.28981,5.28275l-8.91288,-6.50809c-2.486,-1.82212 -5.83009,-1.82566 -8.31609,-0.00353l-9.25187,6.76941l-9.266,-6.76588c-2.48247,-1.82212 -5.82656,-1.82566 -8.31609,-0.00353l-9.25187,6.76941l-9.26953,-6.76588c-2.48247,-1.82212 -5.82656,-1.82566 -8.31609,-0.00353l-9.25187,6.76941l-9.266,-6.76588c-2.48247,-1.82212 -5.82656,-1.82566 -8.31609,-0.00353l-8.90228,6.50809l-5.311,-5.27922c-2.02694,-2.01634 -5.03203,-2.60959 -7.65222,-1.51138c-2.64491,1.09469 -4.35403,3.66544 -4.35403,6.53634v101.85184v10.59375v21.19103h-17.65625v17.65625c0,9.73566 7.92413,17.65625 17.65625,17.65625h123.59022c9.73566,-0.00353 17.65978,-7.92412 17.65978,-17.65978v-27.34953c13.27397,-5.15563 23.03788,-17.42672 24.53866,-32.64641l0.18009,-21.22281c0,-16.43091 -10.27241,-30.47822 -24.71875,-36.14588zM38.84375,194.21875c-5.84069,0 -10.59375,-4.75306 -10.59375,-10.59375v-10.59375h116.53125v10.59375c0,3.97266 1.31716,7.0625 3.53478,10.59375zM173.03125,183.625c0,5.84069 -4.75306,10.59375 -10.59375,10.59375c-5.84069,0 -10.59375,-4.75306 -10.59375,-10.59375v-17.65625h-105.9375v-31.78125h-0.00353l-0.03178,-101.87303l5.30394,5.27922c2.47187,2.45775 6.30681,2.75084 9.13181,0.69919l8.89875,-6.51163l9.26953,6.76941c2.49306,1.81859 5.82656,1.81153 8.31256,0l9.25187,-6.76941l9.27306,6.76941c2.48953,1.81506 5.8195,1.81506 8.30903,0l9.25541,-6.76941l9.26953,6.76941c2.49306,1.81859 5.82656,1.81153 8.31256,0l9.25188,-6.76941l8.91994,6.51162c2.81441,2.05519 6.65641,1.76209 9.12828,-0.69919l5.27216,-5.25803v31.90131c-2.29531,-0.42375 -4.64713,-0.67447 -7.0625,-0.67447c-21.41703,0 -38.84375,17.42672 -38.84375,38.84375l0.19775,21.53709c1.9775,19.93037 18.59203,34.96291 38.646,34.96291c2.41184,0 4.77072,-0.22953 7.0625,-0.64622zM134.61831,125.24284c2.77909,3.80316 6.215,7.09428 10.16294,9.67563v8.91287c-5.33219,-4.72128 -9.01528,-11.21525 -10.16294,-18.5885zM151.84375,148.57028v-10.01816c3.33703,1.31009 6.88594,2.18231 10.59375,2.51778v10.56197c-3.76431,-0.40962 -7.33794,-1.46194 -10.59375,-3.06159zM180.09375,148.56322c-3.25581,1.60672 -6.82944,2.65903 -10.59375,3.06866v-10.56197c3.70781,-0.33547 7.25672,-1.21122 10.59375,-2.51778zM187.15625,143.79603v-8.87756c3.93381,-2.57428 7.35913,-5.84775 10.13116,-9.63325c-1.21122,7.37678 -4.87313,13.82131 -10.13116,18.51081zM165.96875,134.1875c-17.52559,0 -31.78125,-14.25566 -31.78125,-31.78125c0,-17.52559 14.25566,-31.78125 31.78125,-31.78125c17.52559,0 31.78125,14.25566 31.78125,31.78125c0,17.52559 -14.25566,31.78125 -31.78125,31.78125z" fill="url(#color-7)"></path><path d="M165.96875,77.6875c-13.62709,0 -24.71875,11.09166 -24.71875,24.71875c0,13.62709 11.09166,24.71875 24.71875,24.71875c13.62709,0 24.71875,-11.09166 24.71875,-24.71875c0,-13.62709 -11.09166,-24.71875 -24.71875,-24.71875zM165.96875,120.0625c-9.73566,0 -17.65625,-7.92059 -17.65625,-17.65625c0,-9.73566 7.92059,-17.65625 17.65625,-17.65625c9.73566,0 17.65625,7.92059 17.65625,17.65625c0,9.73566 -7.92059,17.65625 -17.65625,17.65625z" fill="url(#color-8)"></path></g></g></g><!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></svg>
